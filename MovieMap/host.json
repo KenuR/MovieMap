@@ -1,0 +1,17 @@
+{
+    "version": "2.0",
+    "logging": {
+        "applicationInsights": {
+            "samplingSettings": {
+                "isEnabled": true,
+                "excludedTypes": "Request"
+            }
+        },
+        "logLevel": {
+            // For all functions. Can also specify function name
+            "Function": "Information",
+            // Default settings, e.g. for host
+            "default": "Information"
+        }
+    }
+}
