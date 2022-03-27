@@ -8,11 +8,6 @@ using System.Threading.Tasks;
 
 namespace MovieMap.Services
 {
-    public interface ITvMazeApiService
-    {
-        Task GetMovie(string movieName);
-    }
-
     public class TvMazeApiService : ITvMazeApiService
     {
         private readonly ILogger<TvMazeApiService> _logger;
@@ -51,5 +46,9 @@ namespace MovieMap.Services
 
             _databaseService.StoreMovie(response);
         }
+    }
+    public interface ITvMazeApiService
+    {
+        Task GetMovie(string movieName);
     }
 }

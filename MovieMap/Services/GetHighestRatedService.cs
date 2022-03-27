@@ -2,11 +2,6 @@
 
 namespace MovieMap.Services
 {
-    public interface IGetHighestRatedService
-    {
-        MovieModel GetHighestRatedMoviePerGenre(string genre);
-    }
-
     public class GetHighestRatedService : IGetHighestRatedService
     {
         private readonly ILogger<TvMazeApiService> _logger;
@@ -23,7 +18,12 @@ namespace MovieMap.Services
 
         public MovieModel GetHighestRatedMoviePerGenre(string genre)
         {
+            _logger.LogInformation("Getting highest rated movie within genre: '{genre}'");
             return _databaseService.GetHighestRatedPerGenre(genre);
         }
+    }
+    public interface IGetHighestRatedService
+    {
+        MovieModel GetHighestRatedMoviePerGenre(string genre);
     }
 }

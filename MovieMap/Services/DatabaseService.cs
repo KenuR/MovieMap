@@ -2,18 +2,11 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MovieMap.Config;
-using System;
 using System.Data.SqlClient;
 using System.Linq;
 
 namespace MovieMap.Services
 {
-    public interface IDatabaseService
-    {
-        MovieModel GetHighestRatedPerGenre(string genre);
-        void StoreMovie(SingleSearchModel model);
-    }
-
     public class DatabaseService : IDatabaseService
     {
         private readonly DatabaseOptions _dbOptions;
@@ -76,4 +69,10 @@ namespace MovieMap.Services
         }
     }
     public record MovieModel(int MovieId, string Title, decimal Rating);
+
+    public interface IDatabaseService
+    {
+        MovieModel GetHighestRatedPerGenre(string genre);
+        void StoreMovie(SingleSearchModel model);
+    }
 }
