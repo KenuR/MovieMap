@@ -1,0 +1,9 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+        "DatabaseOptions:DbConnectionString": "Server=localhost\\SQLEXPRESS;Database=MovieMap;Trusted_Connection=True",
+        "TvMazeApiOptions:ApiUrl": "https://api.tvmaze.com"
+    }
+}
